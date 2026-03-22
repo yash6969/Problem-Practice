@@ -1,17 +1,19 @@
 public class CheckifSorted {
 
-      static boolean isSortedHelper(int arr[], int n){
-          //base case
-           if(n == 0 || n == 1)
+      static boolean isSorted(int[] arr) {
+          // Handle null or arrays with 0/1 elements
+          if (arr == null || arr.length <= 1) {
               return true;
-            
-           //check if the previous and next element adjacent to current element is in sorted or not
-           return arr[n-1] >= arr[n-2] && isSortedHelper(arr, n-1);
-    
-      }
-
-      static boolean isSorted(int arr[]){
-          return isSortedHelper(arr,arr.length);
+          }
+          
+          for (int i = 1; i < arr.length; i++) {
+              // If the current element is smaller than the previous one, array is not sorted
+              if (arr[i] < arr[i - 1]) {
+                  return false;
+              }
+          }
+          
+          return true;
       }
       public static void main(String[] args){
            int arr[] = {10,20,40,30,50};
