@@ -13,13 +13,12 @@ public class AvgOfSubArray {
                     result[i] = sum/k;
                 }
         }
-
        return result;
     }
 
     public static void main(String[] args){
+        
         double[] results = AvgOfSubArray.findAverage(5, new int[] {1,3,2,6,-1, 4,1,8,2});
-
         System.out.println("Averages of subarray of size k: " +Arrays.toString(results));
     }
 }
